@@ -8,10 +8,10 @@ const {
   updatePassword,
 } = require("../controllers/userControllers");
 const router = express.Router();
-router.post("/requestOTP", verifcationUser);
-router.post("/verifyOTP", verfiyOtp);
-router.post("/register", registerUser);
-router.post("/login", loginUser);
-router.post("/forgetpassword", forgetPasswordUser);
-router.post("/updatepassword", updatePassword);
+router.post("/api/requestOTP", verifcationUser);
+router.post("/api/verifyOTP", verfiyOtp);
+router.post("/api/register", registerUser);
+router.post("/api/login", loginUser);
+router.post("/api/forgetpassword", forgetPasswordUser);
+router.post("/api/updatepassword", updatePassword);
 module.exports = router;

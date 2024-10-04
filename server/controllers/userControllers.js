@@ -74,7 +74,7 @@ const sendOTPVerficationEmail = async ({ _id, email }, res) => {
   try {
     const otp = `${Math.floor(1000 + Math.random() * 9000)}`;
     const mailOption = {
-      from: process.env.AUTH_EMAIL,
+      from: { name: "RJS ALUMNI ASSOCIATION", address: process.env.AUTH_EMAIL },
       to: email,
       subject: "Verify Your Email",
       html: VERIFICATION_EMAIL_TEMPLATE.replace("{verificationCode}", otp),

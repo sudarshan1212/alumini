@@ -1,15 +1,10 @@
 const mongoose = require("mongoose");
-// import chalk from "chalk";
 
 const chalkPromise = import("chalk");
 
 const dbConnection = async () => {
   try {
-    const connection = await mongoose.connect(process.env.CONNECTION, {
-      // useUnifiedTopology: true,
-      // useNewUrlParser: true,
-      // useCreateIndex: true
-    });
+    const connection = await mongoose.connect(process.env.CONNECTION);
 
     chalkPromise
       .then((module) => {
@@ -17,10 +12,7 @@ const dbConnection = async () => {
         const chocolate = chalk.hex("#c66b27");
         const almond = chalk.hex("#efdecd");
         console.log(
-          chocolate(
-            chalk.bold("CONNECTION:"),
-            almond(chalk.bold(mongoose.connection.host))
-          )
+          chocolate(chalk.bold("CONNECTION:"), almond(chalk.bold("COnnected")))
         );
       })
       .catch((err) => {
