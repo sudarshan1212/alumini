@@ -19,9 +19,9 @@ const port = process.env.PORT || 3000;
 
 //ROUTER
 app.use("/", require("./Routes/userRoutes")); // Handle /api routes first
-// app.use("/api", (req, res) => {
-//   res.status(200).json({ Status: "SUCCESS", message: "welcome" });
-// }); // Handle /api routes first
+app.use("/api", (req, res) => {
+  res.status(200).json({ Status: "SUCCESS", message: "welcome" });
+}); // Handle /api routes first
 
 //ERROR HANDLER
 app.use((req, res, next) => {
