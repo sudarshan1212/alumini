@@ -13,11 +13,27 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { removeUsers } from "../redux/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Marquee from "react-fast-marquee";
+
 const Header = () => {
-  const headerImg = [img1, img2, img3, img4, img5, img6, img7];
+  const headerImg = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+  ];
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userAlumini.user);
-
   const nav = [
     { path: "/", display: "Home" },
     { path: "/engage-volunteer", display: "Engage & Volunteer" },
@@ -63,28 +79,34 @@ const Header = () => {
     <div className="w-full fixed backdrop-blur-lg bg-white/70  h-20 b shadow-xl px-4 md:px-20 z-20">
       <div className="flex justify-between items-center h-full">
         {/* Logo */}
-        <Link to="/home">
+        <Link to="/">
           <img src={logo2} alt="" className="" />
         </Link>
 
         {/* Image Gallery (Hidden on Mobile, Show on Medium+) */}
-        <div className="hidden md:flex items-center justify-center flex-1 ">
-          {headerImg.map((item, index) => (
-            <div key={index} className="w-20 md:w-[144px] h-16 md:h-20">
-              <img src={item} alt="" className="w-full h-full object-cover" />
-            </div>
-          ))}
+        <div className="hidden md:flex items-center justify-center w-3/4 ">
+          <Marquee
+            direction="left"
+            speed={50}
+            delay={0}
+            className="gap-5 flex items-center h-full"
+          >
+            {headerImg.map((item, index) => (
+              <div key={index} className="w-20 md:w-[144px] h-16 md:h-20">
+                <img src={item} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </Marquee>
         </div>
 
         {/* Hamburger Menu and Navigation */}
         <div className="flex items-center gap-x-4 md:gap-x-10 relative z-20">
-          {/* Hamburger Icon (for mobile) */}
-
-          {!!userInfo && (
+          {userInfo ? (
             <div className="relative" onClick={handleMouseEnter}>
               <div className="h-8 w-8 rounded-full relative cursor-pointer">
                 <FaUserCircle className="w-full h-full text-primaryColor" />
               </div>
+
               {isOpen && (
                 <div className="absolute w-60 px-4 py-3 h-auto bg-white top-12 -right-5 shadow-lg rounded-md">
                   <div className="text-lg font-semibold">
@@ -102,7 +124,14 @@ const Header = () => {
                 </div>
               )}
             </div>
+          ) : (
+            <Link to="/login">
+              <button className=" bg-primaryColor  px-5 py-2 rounded-lg hover:bg-red-900 text-white font-secondaryText ">
+                Login
+              </button>
+            </Link>
           )}
+
           <div
             onClick={toggleMenu}
             className="h-8 w-8 flex items-center justify-center cursor-pointer"

@@ -1,10 +1,83 @@
 import Banner from "../components/Banner";
 import img from "../assets/img.jpg";
+import per1 from "../assets/home/per1.png";
+import per2 from "../assets/home/per2.png";
+import per3 from "../assets/home/per3.png";
+import per4 from "../assets/home/per4.png";
+import per5 from "../assets/home/per5.png";
+import per6 from "../assets/home/per6.png";
+import per7 from "../assets/home/per7.png";
+import per8 from "../assets/home/per8.png";
+import ban from "../assets/home/ban.png";
+import home5 from "../assets/home/home5.png";
+import home6 from "../assets/home/home6.png";
+import home3 from "../assets/home/home3.png";
+import home4 from "../assets/home/home4.png";
+import home2 from "../assets/home/home2.png";
+import home1 from "../assets/home/home.png";
+
 import Button from "../components/Button";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
-
+import { Link } from "react-router-dom";
 const Home = () => {
-  const members = Array.from({ length: 8 });
+  const members = [per1, per2, per3, per4, per5, per6, per7, per8];
+  const combinedMembers = [
+    {
+      img: per1,
+      classNames: "absolute left-1/2 lg:top-1/2 top-10",
+      size: "lg:size-[112px] size-[90px]",
+      name: "Rahul Kapoor",
+    },
+    {
+      img: per2,
+      classNames: "absolute lg:left-20 lg:bottom-0 bottom-0 left-10",
+      size: "size-[70px]",
+    },
+    {
+      img: per3,
+      classNames:
+        "absolute lg:right-20 lg:bottom-0 bottom-24 left-24 lg:left-auto",
+      size: "size-[70px]",
+    },
+    {
+      img: per4,
+      classNames: "absolute lg:right-28 bottom-10 right-11 lg:bottom-auto",
+      size: "size-[70px]",
+    },
+    {
+      img: per5,
+      classNames:
+        "absolute lg:left-52 lg:top-10 bottom-36 lg:bottom-auto left-56",
+      size: "size-[70px]",
+    },
+    {
+      img: per6,
+      classNames: "absolute lg:left-96 lg:bottom-20 -bottom-24 left-32",
+      size: "size-[70px]",
+    },
+    {
+      img: per7,
+      classNames:
+        "absolute lg:right-[800px] lg:bottom-80 bottom-36 left-2 lg:left-auto",
+      size: "size-[70px]",
+    },
+    {
+      img: per8,
+      classNames:
+        "absolute lg:right-[400px] lg:bottom-96 bottom-4 left-36 lg:left-auto",
+      size: "size-[70px]",
+    },
+    {
+      img: per8,
+      classNames: "absolute lg:right-56 lg:bottom-20 -bottom-24 right-32",
+      size: "size-[70px]",
+    },
+  ];
+  const albums = [
+    { imgSrc: ban, title: "32 Years Reunion", subtitle: "Album 2022" },
+    { imgSrc: ban, title: "32 Years Reunion", subtitle: "Album 2022" },
+    { imgSrc: ban, title: "32 Years Reunion", subtitle: "Album 2022" },
+  ];
   return (
     <div className="">
       <div className="pt-20">
@@ -21,18 +94,14 @@ const Home = () => {
       </div>
       {/* FIRST SECTION  */}
       <section className="container mx-auto px-4 lg:py-20 py-10">
-        {/* Flex Container for the Image and Text */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-x-8">
-          {/* Left: Image Section */}
           <div className="w-full lg:w-1/2 lg:h-[482px] h-[376px] mb-6 lg:mb-0 lg:pr-6">
             <img
-              src={img}
+              src={home1}
               alt="Alumni Event"
               className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Right: Text Section */}
           <div className="w-full lg:w-1/2 text-left">
             <h1 className=" heading text-[#913A42]  ">Stay Connected</h1>
             <h2 className="text-2xl lg:text-3xl text-[#913A42] mb-4 lg:mb-6 font-normal">
@@ -58,7 +127,7 @@ const Home = () => {
       {/* SECOND SECTION  */}
       <section className="container  py-14 lg:py-20 relative">
         <div className="lg:w-full w-[350px] lg:h-[533px] h-[483px] mx-auto  ">
-          <img src={img} alt="" className="w-full h-full bg-cover" />
+          <img src={home2} alt="" className="w-full h-full bg-cover" />
         </div>
         <div className="lg:h-[637px] py- h-auto lg:w-[421px] w-[303px] bg-[#913A42] absolute bottom-44 right-9 lg:top-5 lg:left-36 lg:py-10 py-5 px-5 lg:px-10">
           <h1 className="font-secondaryText lg:text-[60px] text-[35px] text-white lg:leading-[71.58px]">
@@ -71,9 +140,9 @@ const Home = () => {
             helps strengthen our network and enriches the alumni experience.
             Join us and make a meaningful impact!
           </p>
-          <div className="mt-5">
+          <Link to="/engage-volunteer">
             <Button>GET INVOLVED</Button>
-          </div>
+          </Link>
         </div>
       </section>
       {/* THIRD SECTION  */}
@@ -84,7 +153,7 @@ const Home = () => {
         <div className="flex lg:flex-row flex-col gap-y-5 justify-between items-center mt-10 h-full px-4 lg:px-0">
           <div className="lg:w-1/2 ">
             <div className="lg:w-[539px]  h-[331px] lg:h-[470px]">
-              <img src={img} alt="" className="w-full h-full bg-cover" />
+              <img src={home3} alt="" className="w-full h-full bg-cover" />
             </div>
           </div>
           <div className="relative lg:w-1/2 lg:h-[430px] mt-5 lg:mt-0 mx-auto border-r-4 border-primaryColor py-8 pr-10">
@@ -101,16 +170,18 @@ const Home = () => {
               We are committed to advancing the School’s mission and supporting
               its key objectives with a bold vision and unwavering dedication.
             </p>
-            <div className="lg:mt-10 mt-5 group">
-              <button className="border-2 px-4 pr-8 py-3 relative text-left  border-primaryColor">
-                <div className="text-primaryColor font-primaryText">
-                  ALUMNI ASSOCIATION
-                </div>
-                <div className="top-2 left-[190px] absolute bg-white group-hover:translate-x-3 transition  ">
-                  <HiOutlineArrowLongRight className="w-12 h-8 text-6xl text-primaryColor" />
-                </div>
-              </button>
-            </div>
+            <Link to="/alumni-association">
+              <div className="lg:mt-10 mt-5 group">
+                <button className="border-2 px-4 pr-8 py-3 relative text-left  border-primaryColor">
+                  <div className="text-primaryColor font-primaryText">
+                    ALUMNI ASSOCIATION
+                  </div>
+                  <div className="top-2 left-[190px] absolute bg-white group-hover:translate-x-3 transition  ">
+                    <HiOutlineArrowLongRight className="w-12 h-8 text-6xl text-primaryColor" />
+                  </div>
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -128,21 +199,27 @@ const Home = () => {
               We are committed to advancing the School’s mission and supporting
               its key objectives with a bold vision and unwavering dedication.
             </p>
-            <div className="lg:mt-10 mt-5">
-              <button className="border-2 px-4 pr-8 py-3 relative text-left group border-primaryColor">
-                <div className="text-primaryColor font-primaryText">
-                  ALUMNI BOARD
-                </div>
-                <div className="top-2 left-[150px] absolute bg-white  ">
-                  <HiOutlineArrowLongRight className="w-12 h-8 group-hover:translate-x-3 transition text-6xl text-primaryColor" />
-                </div>
-              </button>
-            </div>
+            <Link to="/alumni-board">
+              <div className="lg:mt-10 mt-5">
+                <button className="border-2 px-4 pr-8 py-3 relative text-left group border-primaryColor">
+                  <div className="text-primaryColor font-primaryText">
+                    ALUMNI BOARD
+                  </div>
+                  <div className="top-2 left-[150px] absolute bg-white  ">
+                    <HiOutlineArrowLongRight className="w-12 h-8 group-hover:translate-x-3 transition text-6xl text-primaryColor" />
+                  </div>
+                </button>
+              </div>
+            </Link>
           </div>
           <div className="flex justify-start">
             <div className="lg:w-1/2">
               <div className="lg:w-[539px]  h-[331px] lg:h-[470px]">
-                <img src={img} alt="" className="w-full h-full object-cover" />{" "}
+                <img
+                  src={home4}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />{" "}
               </div>
             </div>
           </div>
@@ -158,34 +235,40 @@ const Home = () => {
             Attend our annual events, refer a student, update your information,
             check out our Alumni Spotlight, and complete our Alumni Survey.
           </p>
+
           <div className="flex flex-col gap-y-4 mt-5 lg:mt-12 ">
-            <button className=" px-4 pr-8 py-3 flex items-center justify-between w-full text-left bg-[#913A42]  lg:w-[688px] z-10 ">
+            <Link
+              to="/alumni-events"
+              className=" px-4 pr-8 py-3 flex items-center justify-between w-full text-left bg-[#913A42]  lg:w-[688px] z-10 "
+            >
               <div className="text-white">Alumni Events</div>
 
               <div className="  bg-[#913A42]  ">
                 <HiOutlineArrowLongRight className="w-12 h-8 text-6xl text-white" />
               </div>
-            </button>{" "}
-            <button className=" px-4 pr-8 py-3 flex items-center justify-between  text-left bg-[#913A42] shadow-xl  w-full lg:w-[688px] z-10 ">
+            </Link>
+            <Link
+              to="/refer-student"
+              className=" px-4 pr-8 py-3 flex items-center justify-between  text-left bg-[#913A42] shadow-xl  w-full lg:w-[688px] z-10 "
+            >
               <div className="text-white">Refer a Student</div>
 
               <div className="  bg-[#913A42]  ">
                 <HiOutlineArrowLongRight className="w-12 h-8 text-6xl text-white" />
               </div>
-            </button>{" "}
+            </Link>{" "}
           </div>
         </div>
         <div className="">
           <div className=" lg:h-[618px] h-[287px]">
-            <img src={img} alt="" className="w-full h-full bg-cover" />
+            <img src={home6} alt="" className="w-full h-full bg-cover" />
           </div>
         </div>
       </section>
-      {/* FIVE SECTION  */}
-
+      {/*Give Today*/}
       <section className="lg:max-w-[1020px] lg:mx-auto relative mb-56 lg:my-0 py-10 lg:py-20 px-4 lg:px-0">
         <div className="lg:w-[551px] h-[435px] lg:h-[631px] ">
-          <img src={img} alt="" className="w-full h-full bg-cover" />
+          <img src={home5} alt="" className="w-full h-full bg-cover" />
         </div>
         <div className="absolute w-[314px] mx-auto h-[404px] lg:w-[628px] lg:h-[484px] left-8 bg-primaryColor py-2 -bottom-44 lg:top-44 lg:left-96 lg:py-10 px-10">
           <h1 className="heading text-white">Give Today</h1>
@@ -197,45 +280,37 @@ const Home = () => {
             on our community. Join us in shaping the future of RJS by giving
             today.
           </p>
-          <button className="border px-4 pr-5 py-3 relative text-left bg-[#913A42]  w-36 lg:mt-10 mt-5 group ">
-            <div className="text-white">Alumni Events</div>
+          <Link to="/alumni-events">
+            <button className="border px-4 pr-5 py-3 relative text-left bg-[#913A42]  w-36 lg:mt-10 mt-5 group ">
+              <div className="text-white">Alumni Events</div>
 
-            <div className="top-2 left-[118px] absolute bg-[#913A42]  ">
-              <HiOutlineArrowLongRight className="w-12 h-8 text-6xl text-white group-hover:translate-x-3 transition" />
-            </div>
-          </button>{" "}
+              <div className="top-2 left-[118px] absolute bg-[#913A42]  ">
+                <HiOutlineArrowLongRight className="w-12 h-8 text-6xl text-white group-hover:translate-x-3 transition" />
+              </div>
+            </button>
+          </Link>
         </div>
       </section>
+      {/* RJS Publications */}
       <section className=" lg:py-20 mt-5 bg-[#FDF3F4]">
         <div className="container">
           <h1 className="heading text-center text-primaryColor">
             RJS Publications
           </h1>
           <div className="grid lg:grid-cols-3 px-4 gap-y-4">
-            <div className="flex flex-col items-center justify-center">
-              <div className="lg:w-[389px] lg:h-[437px] h-[381px]">
-                <img src={img} alt="" className="h-full w-full" />
+            {albums.map((album, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center"
+              >
+                <div className="lg:w-[389px] lg:h-[437px] h-[381px]">
+                  <img src={album.imgSrc} alt="" className="h-full w-full" />
+                </div>
+                <p className="text mt-3 text-center">
+                  {album.title} <br /> {album.subtitle}
+                </p>
               </div>
-              <p className="text  mt-3 text-center">
-                32 Years Reunion <br /> Album 2022
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div className="lg:w-[389px] lg:h-[437px] h-[381px]">
-                <img src={img} alt="" className="h-full w-full" />
-              </div>
-              <p className="text  mt-3 text-center">
-                32 Years Reunion <br /> Album 2022
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div className="lg:w-[389px] lg:h-[437px] h-[381px]">
-                <img src={img} alt="" className="h-full w-full" />
-              </div>
-              <p className="text  mt-3 text-center">
-                32 Years Reunion <br /> Album 2022
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -244,84 +319,35 @@ const Home = () => {
           Alumni Stories
         </h1>
         <div className="relative w-full  min-h-screen lg:min-h-[500px] container ">
-          {" "}
-          <div className="absolute left-1/2 lg:top-1/2 top-10 transform -translate-x-1/2 -translate-y-1/2 lg:size-[112px] size-[90px]  bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-            <div className="absolute lg:w-[400px] w-[350px] top-25 -left-32  h-54 py-5 px-4 shadow-lg text-center">
-              <h1 className="font-secondaryText font-semibold text-2xl ">
-                Rahul Kapoor
-              </h1>
-              <p className="font-secondaryText text-base mt-5">
-                I&apos;ll never forget the sense of camaraderie that defined our
-                class. Whether we were competing on the field or collaborating
-                on group projects, we always had each other’s backs. Our
-                teachers and mentors challenged us to think critically and
-                pursue our passions, and our classmates cheered us on every step
-                of the way. The friendships I formed in the Class of 1990 are
-                some of the most meaningful relationships in my life.
-              </p>
+          {combinedMembers.map((member, index) => (
+            <div
+              key={index}
+              className={`${member.classNames} transform translate-x-0 ${member.size} bg-gray-400 rounded-full`}
+            >
+              <img
+                src={member.img}
+                alt={`Person ${index + 1}`}
+                className="w-full h-full bg-cover rounded-full"
+              />
+              {member.name && index === 0 && (
+                <div className="absolute lg:w-[400px] w-[350px] top-25 -left-32 h-54 py-5 px-4 shadow-lg text-center">
+                  <h1 className="font-secondaryText font-semibold text-2xl">
+                    {member.name}
+                  </h1>
+                  <p className="font-secondaryText text-base mt-5">
+                    I &apos; ll never forget the sense of camaraderie that
+                    defined our class. Whether we were competing on the field or
+                    collaborating on group projects, we always had each other’s
+                    backs. Our teachers and mentors challenged us to think
+                    critically and pursue our passions, and our classmates
+                    cheered us on every step of the way. The friendships I
+                    formed in the Class of 1990 are some of the most meaningful
+                    relationships in my life.
+                  </p>
+                </div>
+              )}
             </div>
-          </div>
-          <div className="absolute lg:left-20 lg:bottom-0 bottom-0 left-10  transform translate-x-0 size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
-          <div className="absolute lg:right-20 lg:bottom-0 bottom-24 left-24 lg:left-auto transform translate-x-0 size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
-          <div className="absolute lg:right-28 bottom-10 right-11 lg:bottom-auto transform translate-x-0 size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
-          <div className="absolute lg:left-52 lg:top-10 bottom-36 lg:bottom-auto left-56  transform translate-x-0 size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
-          <div className="absolute lg:left-96 lg:bottom-20 -bottom-24 left-32 transform  size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
-          <div className="absolute lg:right-[800px] lg:bottom-80 bottom-36 left-2 lg:left-auto transform  size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
-          <div className="absolute lg:right-[400px] lg:bottom-96 bottom-4 left-36 lg:left-auto transform  size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
-          <div className="absolute lg:left-[1000px] lg:bottom-44 -bottom-20 left-72 transform  size-[70px] bg-gray-400 rounded-full">
-            <img
-              src={img}
-              alt=""
-              className=" w-full h-full bg-cover rounded-full"
-            />
-          </div>
+          ))}
         </div>
       </section>
       <section className="container">
@@ -330,14 +356,14 @@ const Home = () => {
           Meet The Alumni Board
         </h1>
         <div className="grid lg:grid-cols-4 max-w-[1200px] gap-y-7 mx-auto  lg:py-10 pb-10  place-items-center">
-          {members.map((_, index) => (
+          {members.map((item, index) => (
             <div
               key={index}
               className="w-[258px] h-[408px] bg-[#FDF3F4] shadow-md rounded-lg overflow-hidden"
             >
               <div className="w-[257px] h-[267px]">
                 <img
-                  src={img}
+                  src={item}
                   alt=""
                   className="imge w-full h-full object-cover"
                 />

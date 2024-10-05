@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
-import img from "../assets/img.jpg";
+import img from "../assets/img4.png";
+import img1 from "../assets/alumini/img9.png";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 const Board = () => {
@@ -34,7 +35,7 @@ const Board = () => {
           </div>
           <div className="w-full lg:w-1/2 h-[482px] mb-6 lg:mb-0 lg:pr-6">
             <img
-              src={img}
+              src={img1}
               alt="Alumni Event"
               className="w-full h-full object-cover"
             />
@@ -60,8 +61,6 @@ const Board = () => {
           </div>
         </button>{" "}
       </section>
-
-     
     </div>
   );
 };

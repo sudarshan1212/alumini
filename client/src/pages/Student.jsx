@@ -1,11 +1,12 @@
-import img from "../assets/img.jpg";
+import img from "../assets/img6.png";
+
 import Banner from "../components/Banner";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
+import refer from "../assets/alumini/refer.png";
 
 const Student = () => {
   return (
     <div className="pt-20">
-      {" "}
       <div className="">
         <Banner img={img}>
           <span className="font-normal font-secondaryText - text-[70px] leading-[100px]">
@@ -40,7 +41,7 @@ const Student = () => {
           </div>
           <div className="w-full lg:w-1/2 h-[560px] mb-6 lg:mb-0 lg:pr-6">
             <img
-              src={img}
+              src={refer}
               alt="Alumni Event"
               className="w-full h-full object-cover"
             />

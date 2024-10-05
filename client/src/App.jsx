@@ -22,7 +22,7 @@ function App() {
   const location = useLocation();
   const userInfo = useSelector((state) => state.userAlumini.user);
   const showHeader2 =
-    location.pathname === "/" || location.pathname === "/sign-up";
+    location.pathname === "/login" || location.pathname === "/sign-up";
 
   return (
     <>
@@ -31,9 +31,9 @@ function App() {
         {showHeader2 ? <Header2 /> : <Header />}
 
         <main>
-          {/* <Routes>
+          <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/engage-voluntee" element={<Volunteer />} />
+            <Route path="/engage-volunteer" element={<Volunteer />} />
             <Route path="/alumni-association" element={<Alumini />} />
             <Route path="/alumni-board" element={<Board />} />
             <Route path="/alumni-events" element={<Events />} />
@@ -41,9 +41,9 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/sign-up" element={<Register />} />
-            <Route path="/" element={<Login />} />
-          </Routes> */}
-          <Routes>
+            <Route path="/login" element={<Login />} />
+          </Routes>
+          {/* <Routes>
             <Route
               path="/"
               element={userInfo == null ? <Login /> : <Navigate to="/home" />}
@@ -119,7 +119,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-          </Routes>
+          </Routes> */}
         </main>
         {!showHeader2 && <Footer />}
       </div>

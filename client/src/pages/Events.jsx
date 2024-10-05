@@ -1,16 +1,22 @@
 import Banner from "../components/Banner";
-import img from "../assets/img.jpg";
+import img from "../assets/img5.png";
+
+import img3 from "../assets/alumini/img3.png";
+import img4 from "../assets/alumini/img4.png";
+import img5 from "../assets/alumini/img5.png";
+import img6 from "../assets/alumini/img6.png";
+import img7 from "../assets/alumini/img7.png";
 
 const Events = () => {
   const August = [
     {
-      img: img,
+      img: img3,
       heading: "Tri-State Area Alumni Event",
       time: "August 12, 2024 6:30 pm - 8:30 pm",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis hendrerit lacinia. Phasellus urna diam, viverra nec nisl id, posuere dapibus felis. Suspendisse vel fermentum urna. Quisque at dictum arcu. Maecenas pulvinar non dui vitae aliquet.",
     },
     {
-      img: img,
+      img: img4,
       heading: "Tri-State Area Alumni Event",
       time: "August 12, 2024 6:30 pm - 8:30 pm",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis hendrerit lacinia. Phasellus urna diam, viverra nec nisl id, posuere dapibus felis. Suspendisse vel fermentum urna. Quisque at dictum arcu. Maecenas pulvinar non dui vitae aliquet.",
@@ -18,19 +24,19 @@ const Events = () => {
   ];
   const July = [
     {
-      img: img,
+      img: img5,
       heading: "Tri-State Area Alumni Event",
       time: "August 12, 2024 6:30 pm - 8:30 pm",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis hendrerit lacinia. Phasellus urna diam, viverra nec nisl id, posuere dapibus felis. Suspendisse vel fermentum urna. Quisque at dictum arcu. Maecenas pulvinar non dui vitae aliquet.",
     },
     {
-      img: img,
+      img: img6,
       heading: "Tri-State Area Alumni Event",
       time: "August 12, 2024 6:30 pm - 8:30 pm",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis hendrerit lacinia. Phasellus urna diam, viverra nec nisl id, posuere dapibus felis. Suspendisse vel fermentum urna. Quisque at dictum arcu. Maecenas pulvinar non dui vitae aliquet.",
     },
     {
-      img: img,
+      img: img7,
       heading: "Tri-State Area Alumni Event",
       time: "August 12, 2024 6:30 pm - 8:30 pm",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis hendrerit lacinia. Phasellus urna diam, viverra nec nisl id, posuere dapibus felis. Suspendisse vel fermentum urna. Quisque at dictum arcu. Maecenas pulvinar non dui vitae aliquet.",
@@ -56,7 +62,11 @@ const Events = () => {
                 className="flex items-center justify-center gap-x-20 mt-5"
               >
                 <div className="w-[392px] h-[238px]">
-                  <img src={item.img} alt="" className="" />
+                  <img
+                    src={item.img}
+                    alt=""
+                    className="w-full h-full bg-cover"
+                  />
                 </div>
                 <div className="w-1/2">
                   <h1 className="w-full border-b-primaryColor text-[28px] text-primaryColor font-secondaryText">
@@ -79,7 +89,7 @@ const Events = () => {
         </div>
         <div>
           <h1 className="w-full border-b-2 border-b-primaryColor text-[28px] text-primaryColor  font-secondaryText">
-          July 2024
+            July 2024
           </h1>
           <div className="mt-10">
             {July.map((item, index) => (
@@ -88,7 +98,11 @@ const Events = () => {
                 className="flex items-center justify-center gap-x-20 mt-5"
               >
                 <div className="w-[392px] h-[238px]">
-                  <img src={item.img} alt="" className="" />
+                  <img
+                    src={item.img}
+                    alt=""
+                    className="w-full h-full bg-cover"
+                  />
                 </div>
                 <div className="w-1/2">
                   <h1 className="w-full border-b-primaryColor text-[28px] text-primaryColor font-secondaryText">

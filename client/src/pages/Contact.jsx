@@ -1,5 +1,6 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
-import img from "../assets/img.jpg";
+import img from "../assets/img8.png";
+
 import Banner from "../components/Banner";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
@@ -10,7 +11,7 @@ const Contact = () => {
       {" "}
       <Banner img={img}>
         <span className="font-normal font-secondaryText - text-[70px] leading-[100px]">
-          Gallery
+          Contact Us
         </span>
       </Banner>
       <section className="container py-20  flex items-center justify-center">

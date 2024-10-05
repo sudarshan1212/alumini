@@ -1,6 +1,8 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
-import img from "../assets/img.jpg";
+import img from "../assets/img3.png";
 import Banner from "../components/Banner";
+import img1 from "../assets/alumini/img.png";
+import img2 from "../assets/alumini/img2.png";
 
 const Alumini = () => {
   const advantages = [
@@ -27,7 +29,7 @@ const Alumini = () => {
               Maintain your connection with <br /> our alumni group.
             </h2>
             <div className="w-[522px] h-[280px]">
-              <img src={img} alt="" className="imge" />
+              <img src={img1} alt="" className="imge" />
             </div>
           </div>
           <div className="">
@@ -73,7 +75,7 @@ const Alumini = () => {
             ))}
           </div>
           <div className="w-[442px] h-[372px] mb-40">
-            <img src={img} alt="" className="imge" />
+            <img src={img2} alt="" className="imge" />
           </div>
         </div>
       </section>
